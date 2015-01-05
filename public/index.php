@@ -1,15 +1,15 @@
 <?php
 
-require_once __DIR__.'/../bootstrap.php';
+require_once __DIR__ . '/../config/bootstrap.php';
 
-use Symfony\Component\HttpFoundation\Response;
+use EJS\Controller\ClienteController;
 
-$array = require_once 'arrayClientes.php';
+$array = require_once __DIR__ . '/../src/EJS/ArrayData/ArrayClientesJSON.php';
 
-$cliente = new \EJS\classes\Cliente();
+$cliente = new ClienteController();
 $cliente->setCliente($array);
 $cliente->getCliente($app);
 
-$app->mount('/clientes', $cliente->conectar($app));
+$app->mount('/clientes', $cliente->connect($app));
 
 $app->run();

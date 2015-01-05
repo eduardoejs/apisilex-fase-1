@@ -12,9 +12,9 @@
     "require" : {
         "silex/silex": "~1.2"
     },
-    "autoload" : {
-        "psr-4" : {
-            "" : "src/"
+    "autoload":{
+        "psr-4":{
+            "EJS\\" : "src/EJS/"
         }
     }
 }
